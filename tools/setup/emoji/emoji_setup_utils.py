@@ -20,7 +20,7 @@ EMOJISETS = ['apple', 'emojione', 'google', 'twitter']
 # where the two names are very different, users might reasonably type
 # either name and be surprised when they can't find the relevant emoji.
 whitelisted_names = [
-    ['date', 'calendar'], ['shirt', 'tshirt'], ['cupid', 'heart_with_arrow'],
+    ['baby_dark_skin_tone', 'baby'], ['date', 'calendar'], ['shirt', 'tshirt'], ['cupid', 'heart_with_arrow'],
     ['tada', 'party_popper'], ['parking', 'p_button'], ['car', 'automobile'],
     ['mortar_board', 'graduation_cap'], ['cd', 'optical_disc'], ['tv', 'television'],
     ['sound', 'speaker_on'], ['mute', 'speaker_off'], ['antenna_bars', 'signal_strength'],
