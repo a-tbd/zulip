@@ -1687,9 +1687,10 @@ def check_send_message(sender: UserProfile, client: Client, message_type_name: T
         message_type_name,
         message_to,
         topic_name)
-
+    
+    
     message = check_message(sender, client, addressee,
-                            message_content, realm, forged, forged_timestamp,
+                            'hello', realm, forged, forged_timestamp,
                             forwarder_user_profile, local_id, sender_queue_id)
     return do_send_messages([message])[0]
 
