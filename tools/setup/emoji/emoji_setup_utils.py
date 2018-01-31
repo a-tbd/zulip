@@ -11,6 +11,7 @@ from collections import defaultdict
 from itertools import permutations, chain
 
 from typing import Any, Dict, List
+import pdb
 
 # Emojisets that we currently support.
 EMOJISETS = ['apple', 'emojione', 'google', 'twitter']
@@ -278,6 +279,7 @@ def emoji_can_be_included(emoji_dict, unified_reactions_codepoints):
     if emoji_dict["short_name"] == "fried_egg":
         return False
     codepoint = emoji_dict["unified"].lower()
+    pdb.set_trace()
     if emoji_dict["category"] == "Skin Tones":
         print(emoji_dict["category"])
     if '-' not in codepoint and emoji_dict["category"] != "Skin Tones" and \
