@@ -11,7 +11,6 @@ from collections import defaultdict
 from itertools import permutations, chain
 
 from typing import Any, Dict, List
-import pdb
 
 # Emojisets that we currently support.
 EMOJISETS = ['apple', 'emojione', 'google', 'twitter']
