@@ -246,6 +246,8 @@ def generate_emoji_catalog(emoji_data):
     print(emoji_catalog)
     return emoji_catalog
 
+    #making some changes
+
 # Use only those names for which images are present in all
 # the emoji sets so that we can switch emoji sets seemlessly.
 def emoji_is_universal(emoji_dict):
