@@ -243,6 +243,7 @@ def generate_emoji_catalog(emoji_data):
             emoji_catalog[category] = [codepoint, ]
     for category in emoji_catalog:
         emoji_catalog[category].sort(key=lambda codepoint: sort_order[codepoint])
+    print(emoji_catalog)
     return emoji_catalog
 
 # Use only those names for which images are present in all
