@@ -189,7 +189,7 @@ def longer(names):
 # A lot of emoji that have a color in their name aren't actually the
 # right color, which is super confusing.  A big part of the reason is
 # that "black" and "white" actually mean filled-in and not-filled-in
-# to the Unicode committee, which is a poor choice by explains why
+# to the Unicode committee, which is a poor choice but explains why
 # something with "black" in its name might be any solid color.  Users
 # want the emoji to have reasonable names, though, so we have to
 # correct the names with "black" or "white" in them.
@@ -268,12 +268,13 @@ def generate_codepoint_to_name_map(names, unified_reactions_data):
 
 def emoji_can_be_included(emoji_dict, unified_reactions_codepoints):
     # type: (Dict[str, Any], List[str]) -> bool
-    # This function returns True if an emoji in new(not included in old emoji dataset) and is
+    # This function returns True if an emoji in new (not included in old emoji dataset) and is
     # safe to be included. Currently emojis which are represented by a sequence of codepoints
     # or emojis with ZWJ are not to be included until we implement a mechanism for dealing with
     # their unicode versions.
     # `:fried_egg:` emoji is banned for now, due to a name collision with `:egg:` emoji in
     # `unified_reactions.json` dataset, until we completely switch to iamcal dataset.
+    print(emoji_dict)
     if emoji_dict["short_name"] == "fried_egg":
         return False
     codepoint = emoji_dict["unified"].lower()
