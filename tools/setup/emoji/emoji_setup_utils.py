@@ -246,8 +246,6 @@ def generate_emoji_catalog(emoji_data):
     print(emoji_catalog)
     return emoji_catalog
 
-    #making some changes
-
 # Use only those names for which images are present in all
 # the emoji sets so that we can switch emoji sets seemlessly.
 def emoji_is_universal(emoji_dict):
@@ -280,6 +278,8 @@ def emoji_can_be_included(emoji_dict, unified_reactions_codepoints):
     if emoji_dict["short_name"] == "fried_egg":
         return False
     codepoint = emoji_dict["unified"].lower()
+    if emoji_dict["category"] == "Skin Tones":
+        print(emoji_dict["category"])
     if '-' not in codepoint and emoji_dict["category"] != "Skin Tones" and \
             emoji_is_universal(emoji_dict) and codepoint not in unified_reactions_codepoints:
         return True
