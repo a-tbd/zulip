@@ -20,7 +20,7 @@ EMOJISETS = ['apple', 'emojione', 'google', 'twitter']
 # where the two names are very different, users might reasonably type
 # either name and be surprised when they can't find the relevant emoji.
 whitelisted_names = [
-    ['baby_dark_skin_tone', 'baby'], ['date', 'calendar'], ['shirt', 'tshirt'], ['cupid', 'heart_with_arrow'],
+    ['date', 'calendar'], ['shirt', 'tshirt'], ['cupid', 'heart_with_arrow'],
     ['tada', 'party_popper'], ['parking', 'p_button'], ['car', 'automobile'],
     ['mortar_board', 'graduation_cap'], ['cd', 'optical_disc'], ['tv', 'television'],
     ['sound', 'speaker_on'], ['mute', 'speaker_off'], ['antenna_bars', 'signal_strength'],
@@ -223,7 +223,6 @@ def emoji_names_for_picker(emoji_map):
         codepoint_to_names[codepoint] = names
 
     return sorted(list(chain.from_iterable(codepoint_to_names.values())))
-
 # Returns a dict from categories to list of codepoints. The list of
 # codepoints are sorted according to the `sort_order` as defined in
 # `emoji_data`.
@@ -243,7 +242,7 @@ def generate_emoji_catalog(emoji_data):
             emoji_catalog[category] = [codepoint, ]
     for category in emoji_catalog:
         emoji_catalog[category].sort(key=lambda codepoint: sort_order[codepoint])
-    print(emoji_catalog)
+
     return emoji_catalog
 
 # Use only those names for which images are present in all
@@ -268,7 +267,7 @@ def generate_codepoint_to_name_map(names, unified_reactions_data):
 
 def emoji_can_be_included(emoji_dict, unified_reactions_codepoints):
     # type: (Dict[str, Any], List[str]) -> bool
-    # This function returns True if an emoji in new (not included in old emoji dataset) and is
+    # This function returns True if an emoji is new (not included in old emoji dataset) and is
     # safe to be included. Currently emojis which are represented by a sequence of codepoints
     # or emojis with ZWJ are not to be included until we implement a mechanism for dealing with
     # their unicode versions.
@@ -279,8 +278,6 @@ def emoji_can_be_included(emoji_dict, unified_reactions_codepoints):
         return False
     codepoint = emoji_dict["unified"].lower()
     pdb.set_trace()
-    if emoji_dict["category"] == "Skin Tones":
-        print(emoji_dict["category"])
     if '-' not in codepoint and emoji_dict["category"] != "Skin Tones" and \
             emoji_is_universal(emoji_dict) and codepoint not in unified_reactions_codepoints:
         return True
